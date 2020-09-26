@@ -27,7 +27,7 @@ public abstract class AbstractRestController {
 	 * @see ErrorResource
 	 */
 	@ExceptionHandler(value = RestRuntimeException.class)
-	public ResponseEntity<?> restRuntimeExceptionHandler(WebRequest req, RestRuntimeException e) {
+	public final ResponseEntity<?> restRuntimeExceptionHandler(WebRequest req, RestRuntimeException e) {
 
 		// エラーレスポンスを作成
 		ErrorResource res = new ErrorResource();

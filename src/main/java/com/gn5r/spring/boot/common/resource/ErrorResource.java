@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @lombok.Data
 @ApiModel(description = "エラーリソース")
-public class ErrorResource {
+public final class ErrorResource {
 
 	@ApiModelProperty(value = "HTTP Status Code", notes = "Httpステータスコードが格納されています")
 	private HttpStatus status;

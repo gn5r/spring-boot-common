@@ -21,7 +21,7 @@ import lombok.Setter;
  * @see HttpStatus
  * @see FieldError
  */
-public class RestRuntimeException extends RuntimeException {
+public final class RestRuntimeException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

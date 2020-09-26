@@ -59,7 +59,7 @@ public enum CmnLogger {
 	 * @param objects オブジェクト配列
 	 * @return メッセージ
 	 */
-	private String concatString(Object[] objects) {
+	private final String concatString(Object... objects) {
 		StringBuffer buffer = new StringBuffer();
 
 		for (Object msg : objects) {

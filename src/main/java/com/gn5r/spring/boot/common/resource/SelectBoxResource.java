@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @lombok.Data
 @ApiModel(description = "SelectBox用リソース")
-public class SelectBoxResource implements Serializable {
+public final class SelectBoxResource implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

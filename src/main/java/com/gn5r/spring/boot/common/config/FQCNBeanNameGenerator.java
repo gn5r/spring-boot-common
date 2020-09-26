@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationBeanNameGenerator;
  * @since 0.1.0-RELEASE
  * @see AnnotationBeanNameGenerator
  */
-public class FQCNBeanNameGenerator extends AnnotationBeanNameGenerator {
+public final class FQCNBeanNameGenerator extends AnnotationBeanNameGenerator {
 
 	/**
 	 * Bean登録時にパッケージ名を付与した名称を返却する
