@@ -20,7 +20,10 @@ public class ByteSizeTest {
 
     @Test
     public void byteSizeTest() {
-        TestClass test = new TestClass("あいうえおかきくけこ");
+        TestClass test = new TestClass();
+        test.setText("あいう");
+        test.setId(111);
+        test.setName("");
         Set<ConstraintViolation<Object>> violations = validator.validate(test);
         final int cnt = violations.size();
         System.out.println("エラーカウント:" + cnt);
@@ -32,8 +35,10 @@ public class ByteSizeTest {
         @ByteSize(max = 10)
         private String text;
 
-        TestClass(final String text) {
-            this.text = text;
-        }
+        @Required
+        private Integer id;
+
+        @Required
+        private String name;
     }
 }
