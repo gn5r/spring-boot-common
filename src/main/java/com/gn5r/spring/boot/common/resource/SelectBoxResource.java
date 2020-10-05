@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 /**
  * <p>
- * electBox用リソース
+ * SelectBox用リソース
  * </p>
  *
  * <ul>

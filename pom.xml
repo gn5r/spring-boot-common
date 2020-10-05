@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gn5r</groupId>
 	<artifactId>spring-boot-common</artifactId>
-	<version>0.2.2-RELEASE</version>
+	<version>0.2.3-RELEASE</version>
 	<name>spring-boot-common</name>
 	<url>https://maven.pkg.github.com/gn5r/spring-boot-common</url>
 	<description>Spring boot commo library</description>

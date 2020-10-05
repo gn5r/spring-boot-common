@@ -6,6 +6,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 
+import com.gn5r.spring.boot.common.logger.CmnLogger;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +28,7 @@ public class ByteSizeTest {
         test.setName("");
         Set<ConstraintViolation<Object>> violations = validator.validate(test);
         final int cnt = violations.size();
-        System.out.println("エラーカウント:" + cnt);
+        CmnLogger.APP.info("エラーカウント:" + cnt);
         violations.stream().forEach(e->System.out.println(e.getMessage()));
     }
 
