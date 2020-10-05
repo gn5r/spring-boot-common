@@ -20,7 +20,7 @@ public enum CmnLogger {
 	private final Logger log = LoggerFactory.getLogger(name());
 
 	// 除外クラス名
-	private final Pattern excludes = Pattern.compile("java.lang.*");
+	private final Pattern excludes = Pattern.compile("java.lang.*|com.gn5r.spring.boot.common.logger.*");
 
 	/**
 	 * infoレベルのログ
