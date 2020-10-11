@@ -7,6 +7,8 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 
 import com.gn5r.spring.boot.common.logger.CmnLogger;
+import com.gn5r.spring.boot.common.validator.annotations.ByteSize;
+import com.gn5r.spring.boot.common.validator.annotations.Required;
 
 import org.junit.Before;
 import org.junit.Test;

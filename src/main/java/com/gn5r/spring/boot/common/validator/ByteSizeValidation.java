@@ -1,4 +1,4 @@
-package com.gn5r.spring.boot.common.validation;
+package com.gn5r.spring.boot.common.validator;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Objects;
@@ -6,7 +6,7 @@ import java.util.Objects;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import com.gn5r.spring.boot.common.annotations.ByteSize;
+import com.gn5r.spring.boot.common.validator.annotations.ByteSize;
 
 /**
  * {@link ByteSize}用バリデーションクラス

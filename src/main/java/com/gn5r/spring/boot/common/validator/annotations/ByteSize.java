@@ -1,4 +1,4 @@
-package com.gn5r.spring.boot.common.annotations;
+package com.gn5r.spring.boot.common.validator.annotations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import com.gn5r.spring.boot.common.validation.ByteSizeValidation;
+import com.gn5r.spring.boot.common.validator.ByteSizeValidation;
 
 /**
  * バイト数バリデーションアノテーション
