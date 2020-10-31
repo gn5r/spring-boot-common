@@ -20,7 +20,7 @@ public enum CmnLogger {
 	private final Logger log = LoggerFactory.getLogger(name());
 
 	// 除外クラス名
-	private final Pattern excludes = Pattern.compile("java.lang.*|*.CmnLogger");
+	private final Pattern excludes = Pattern.compile("java.lang.*|.*CmnLogger");
 
 	/**
 	 * infoレベルのログ
