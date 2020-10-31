@@ -1,11 +1,11 @@
-package com.gn5r.spring.boot.common.validator;
+package com.github.gn5r.spring.boot.common.validator;
 
 import java.util.Objects;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import com.gn5r.spring.boot.common.validator.annotations.Required;
+import com.github.gn5r.spring.boot.common.validator.annotations.Required;
 
 /**
  * {@link Required}用バリデーションクラス

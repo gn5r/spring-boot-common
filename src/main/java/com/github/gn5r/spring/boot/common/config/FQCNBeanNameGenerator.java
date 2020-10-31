@@ -1,4 +1,4 @@
-package com.gn5r.spring.boot.common.config;
+package com.github.gn5r.spring.boot.common.config;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationBeanNameGenerator;

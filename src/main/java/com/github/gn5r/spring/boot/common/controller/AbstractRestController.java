@@ -1,11 +1,11 @@
-package com.gn5r.spring.boot.common.controller;
+package com.github.gn5r.spring.boot.common.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-import com.gn5r.spring.boot.common.exception.RestRuntimeException;
-import com.gn5r.spring.boot.common.resource.ErrorResource;
+import com.github.gn5r.spring.boot.common.exception.RestRuntimeException;
+import com.github.gn5r.spring.boot.common.resource.ErrorResource;
 
 /**
  * 基底コントローラー

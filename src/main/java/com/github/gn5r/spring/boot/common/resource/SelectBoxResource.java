@@ -1,4 +1,4 @@
-package com.gn5r.spring.boot.common.resource;
+package com.github.gn5r.spring.boot.common.resource;
 
 import java.io.Serializable;
 

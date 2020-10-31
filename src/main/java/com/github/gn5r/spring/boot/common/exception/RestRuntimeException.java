@@ -1,4 +1,4 @@
-package com.gn5r.spring.boot.common.exception;
+package com.github.gn5r.spring.boot.common.exception;
 
 import java.util.List;
 
