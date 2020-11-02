@@ -55,7 +55,7 @@ public enum CmnLogger {
 	 * @param t 例外クラス
 	 */
 	public final void error(Throwable t) {
-		log.error(setStackTrace(t.getMessage()));
+		log.error(t.getMessage(), t);
 	}
 
 	/**
@@ -107,7 +107,7 @@ public enum CmnLogger {
 		final StackTraceElement element = this.getFiStackTraceElement();
 
 		StringBuffer buffer = new StringBuffer();
-		buffer.append(element.getClassName() + element.getMethodName() + " - " + concatString(messages));
+		buffer.append(element.getClassName() + "." + element.getMethodName() + " - " + concatString(messages));
 
 		return buffer.toString();
 	}
