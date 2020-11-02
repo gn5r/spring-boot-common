@@ -24,6 +24,17 @@ import org.thymeleaf.exceptions.TemplateInputException;
 public abstract class AbstractController implements ErrorController {
 
     /**
+     * エラーページパスを返却する
+     * <p>application.propertiesの server.error.path に設定した値が返却される</p>
+     * 
+     * @return エラーページパス
+     */
+    @Override
+    public String getErrorPath() {
+        return this.SERVER_ERROR_PATH;
+    }
+
+    /**
      * エラーページパス
      * <p>application.propertiesで変更可能</p>
      */
