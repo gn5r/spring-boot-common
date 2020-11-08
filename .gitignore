@@ -34,8 +34,3 @@ build/
 
 ### lib.cmdで生成したzipファイルは除外 ###
 spring-boot-common.zip
-src/main/java/com/github/gn5r/spring/boot/common/config/InterceptorConfig.java
-src/main/java/com/github/gn5r/spring/boot/common/SpringBootCommonApplication.java
-src/main/java/com/github/gn5r/spring/boot/common/controller/SampleRestController.java
-src/main/java/com/github/gn5r/spring/boot/common/controller/IndexController.java
-src/main/resources/static/index.html
