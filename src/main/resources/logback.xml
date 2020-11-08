@@ -5,9 +5,9 @@
     <timestamp key="time" datePattern="yyyyMMdd-HHmmss" />
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>${USERPROFILE}/log/spring-boot-common_${time}.log</file>
+        <file>${USERPROFILE}/log/spring-boot-common/spring-boot-common_${time}.log</file>
         <encoder>
-            <pattern>%msg%n</pattern>
+            <pattern>${format}</pattern>
         </encoder>
     </appender>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-    <root>
+    <root level="${logging.level.root:-INFO}">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>
