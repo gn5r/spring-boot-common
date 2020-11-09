@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.gn5r</groupId>
 	<artifactId>spring-boot-common</artifactId>
-	<version>0.5.2</version>
+	<version>0.5.3</version>
 	<name>spring-boot-common</name>
 	<url>https://maven.pkg.github.com/gn5r/spring-boot-common</url>
 	<description>Spring boot commo library</description>
@@ -15,6 +15,13 @@
 		<github.global.server>github</github.global.server>
 		<skipTests>true</skipTests>
 		<maven.test.skip>true</maven.test.skip>
+
+		<!-- ビルド時の除外設定 -->
+		<package.name>com/github/gn5r/spring/boot/common</package.name>
+		<exclude.class.application>${package.name}/SpringBootCommonApplication.java</exclude.class.application>
+		<exclude.class.sampleController>${package.name}/controller/SampleController.java</exclude.class.sampleController>
+		<exclude.class.sampleRestController>${package.name}/controller/SampleRestController.java</exclude.class.sampleRestController>
+		<exclude.class.interceptorConfig>${package.name}/config/InterceptorConfig.java</exclude.class.interceptorConfig>
 	</properties>
 
 	<!-- Github Packageへデプロイする為の設定 -->
@@ -46,6 +53,12 @@
 			<version>2.3.4.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>2.3.5.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- lombok -->
 		<dependency>
@@ -75,7 +88,56 @@
 
 	<!-- ビルド設定 -->
 	<build>
+		<!-- リソース設定 -->
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>ValidationMessages_ja.properties</include>
+					<include>ValidationMessages.properties</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
+			<!-- インストールプラグインをスキップ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!-- コンパイル -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<excludes>
+						<exclude>${exclude.class.application}</exclude>
+						<exclude>${exclude.class.sampleController}</exclude>
+						<exclude>${exclude.class.sampleRestController}</exclude>
+						<exclude>${exclude.class.interceptorConfig}</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<!-- jarファイル生成 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<excludes>
+						<exclude>${exclude.class.application}</exclude>
+						<exclude>${exclude.class.sampleController}</exclude>
+						<exclude>${exclude.class.sampleRestController}</exclude>
+						<exclude>${exclude.class.interceptorConfig}</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 			<!-- javadoc生成 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -90,6 +152,12 @@
 					<docencoding>${project.build.sourceEncoding}</docencoding>
 					<charset>${project.build.sourceEncoding}</charset>
 					<failOnError>false</failOnError>
+					<sourceFileExcludes>
+						<sourceFileExclude>${exclude.class.application}</sourceFileExclude>
+						<sourceFileExclude>${exclude.class.sampleController}</sourceFileExclude>
+						<sourceFileExclude>${exclude.class.sampleRestController}</sourceFileExclude>
+						<sourceFileExclude>${exclude.class.interceptorConfig}</sourceFileExclude>
+					</sourceFileExcludes>
 				</configuration>
 				<executions>
 					<execution>
@@ -112,6 +180,12 @@
 					<docencoding>${project.build.sourceEncoding}</docencoding>
 					<charset>${project.build.sourceEncoding}</charset>
 					<excludeResources>true</excludeResources>
+					<excludes>
+						<exclude>${exclude.class.application}</exclude>
+						<exclude>${exclude.class.sampleController}</exclude>
+						<exclude>${exclude.class.sampleRestController}</exclude>
+						<exclude>${exclude.class.interceptorConfig}</exclude>
+					</excludes>
 				</configuration>
 				<executions>
 					<execution>
