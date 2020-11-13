@@ -6,14 +6,16 @@ import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.github.gn5r.spring.boot.common.annotation.NoConsoleURL;
+import com.github.gn5r.spring.boot.common.annotation.NoURLConsole;
+import com.github.gn5r.spring.boot.common.config.properties.URLConsoleProperty;
 import com.github.gn5r.spring.boot.common.context.Context;
 import com.github.gn5r.spring.boot.common.context.RequestData;
 import com.github.gn5r.spring.boot.common.logger.CmnLogger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
 
 /**
@@ -22,12 +24,15 @@ import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
  * @author gn5r
  * @since 0.5.0
  */
-public class URLConsoleInterceptor extends HandlerInterceptorAdapter {
+public class URLConsoleInterceptor implements AsyncHandlerInterceptor {
+
+    @Autowired
+    private URLConsoleProperty property;
 
     /**
      * Controllerの処理より前に実行されるハンドラー
      * <p>
-     * 各メソッドへのアクセスURLをロギングする。各メソッドまたはコントローラーに {@link NoConsoleURL}
+     * 各メソッドへのアクセスURLをロギングする。各メソッドまたはコントローラーに {@link NoURLConsole}
      * アノテーションを付与している場合はロギングしない
      * </p>
      *
@@ -57,14 +62,19 @@ public class URLConsoleInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
 
+        // プロパティでfalseに指定している場合はロギングしない
+        if (!property.isEnable()) {
+            return true;
+        }
+
         final HandlerMethod handlerMethod = (HandlerMethod) handler;
         final Method method = handlerMethod.getMethod();
 
         // クラスにアノテーションが付与されているかチェック
-        NoConsoleURL annotation = method.getDeclaringClass().getDeclaredAnnotation(NoConsoleURL.class);
+        NoURLConsole annotation = method.getDeclaringClass().getDeclaredAnnotation(NoURLConsole.class);
         if (Objects.isNull(annotation)) {
             // メソッドにアノテーションが付与されているかチェック
-            annotation = AnnotationUtils.findAnnotation(method, NoConsoleURL.class);
+            annotation = AnnotationUtils.findAnnotation(method, NoURLConsole.class);
             if (!Objects.isNull(annotation)) {
                 return true;
             }
