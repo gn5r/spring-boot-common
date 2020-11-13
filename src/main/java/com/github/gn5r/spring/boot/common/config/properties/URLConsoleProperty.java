@@ -22,7 +22,6 @@ public class URLConsoleProperty {
 
     /**
      * URLロギングの有効/無効
-     * <p>既定値は {@code true} </p>
      */
     private boolean enable = true;
 
