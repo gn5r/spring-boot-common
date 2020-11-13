@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
 
 import com.github.gn5r.spring.boot.common.annotation.NoAuthenticate;
@@ -24,7 +24,7 @@ import com.github.gn5r.spring.boot.common.logger.CmnLogger;
  * @since 0.3.0
  */
 @Configuration
-public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
+public class AuthenticationInterceptor implements AsyncHandlerInterceptor {
 
     /**
      * Controllerの処理より前に実行されるハンドラー
