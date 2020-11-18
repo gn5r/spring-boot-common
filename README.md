@@ -7,7 +7,7 @@
 ```settings.xml:xml
   <servers>
     <server>
-      <id>github</id>
+      <id>spring-boot-common</id>
       <username>gn5r</username>
       <password>Personal Access Token</password>
     </server>
