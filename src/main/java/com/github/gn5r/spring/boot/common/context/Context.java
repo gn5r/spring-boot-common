@@ -8,7 +8,7 @@ import com.github.gn5r.spring.boot.common.interceptor.URLConsoleInterceptor;
  * @author gn5r
  * @since 0.5.0
  */
-public final class Context {
+public class Context {
 
     /**
      * リクエストデータ
