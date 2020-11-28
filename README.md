@@ -81,7 +81,7 @@
  * また本パッケージのみを記述すると、各アプリケーションのBeanなどを読み込まなくなってしまうので、続けて各アプリケーションのパッケージも記述すること
  */
 @SpringBootApplication
-@ComponentScan(nameGeneratir = FQCNBeanNameGenerator.class, value = {"com.github.gn5r.spring.boot.common", "各アプリケーションのパッケージ"})
+@ComponentScan(nameGenerator = FQCNBeanNameGenerator.class, value = {"com.github.gn5r.spring.boot.common", "各アプリケーションのパッケージ"})
 public class SpringBootApplication {
 
   public static void main(String[] args) {
