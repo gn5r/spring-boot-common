@@ -27,7 +27,7 @@
 	<!-- Github Packageへデプロイする為の設定 -->
 	<distributionManagement>
 		<repository>
-			<id>spring-boot-common</id>
+			<id>github</id>
 			<name>Spring Boot Common</name>
 			<url>https://maven.pkg.github.com/gn5r/spring-boot-common</url>
 		</repository>
