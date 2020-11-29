@@ -1,5 +1,5 @@
 {
-  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.configuration.updateBuildConfiguration": "disabled",
   "maven.terminal.favorites": [
     { "alias": "install", "command": "clean install" },
     { "alias": "deploy", "command": "clean deploy" }

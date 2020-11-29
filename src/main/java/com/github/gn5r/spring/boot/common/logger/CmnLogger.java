@@ -3,6 +3,8 @@ package com.github.gn5r.spring.boot.common.logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.gn5r.common.utils.ObjectUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +18,7 @@ public enum CmnLogger {
 
 	SYS(), APP();
 
-	/** ロガー */
+	// ロガー
 	private final Logger log = LoggerFactory.getLogger(name());
 
 	// 除外クラス名
@@ -68,7 +70,13 @@ public enum CmnLogger {
 		StringBuffer buffer = new StringBuffer();
 
 		for (Object msg : objects) {
-			buffer.append(msg.toString() + ",");
+			String str = "";
+			if (msg instanceof Comparable) {
+				str = msg.toString();
+			} else {
+				str = ObjectUtil.toString(msg);
+			}
+			buffer.append(str + ",");
 		}
 
 		// 末尾にあるカンマを削除

@@ -30,7 +30,7 @@ public class ByteSizeTest {
         test.setName("");
         Set<ConstraintViolation<Object>> violations = validator.validate(test);
         final int cnt = violations.size();
-        CmnLogger.APP.info("エラーカウント:" + cnt);
+        CmnLogger.SYS.info("エラーカウント:" + cnt);
         violations.stream().forEach(e->System.out.println(e.getMessage()));
     }
 

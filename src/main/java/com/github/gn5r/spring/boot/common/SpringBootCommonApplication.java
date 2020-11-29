@@ -1,6 +1,7 @@
 package com.github.gn5r.spring.boot.common;
 
 import com.github.gn5r.spring.boot.common.config.FQCNBeanNameGenerator;
+import com.github.gn5r.spring.boot.common.logger.CmnLogger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ public class SpringBootCommonApplication extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
+        CmnLogger.SYS.info("default encoding:" + System.getProperty("file.encoding"));
         SpringApplication.run(SpringBootCommonApplication.class, args);
     }
 }
