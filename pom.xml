@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.gn5r</groupId>
 	<artifactId>spring-boot-common</artifactId>
-	<version>0.6.5</version>
+	<version>0.6.6</version>
 	<name>spring-boot-common</name>
 	<url>https://maven.pkg.github.com/gn5r/spring-boot-common</url>
 	<description>Spring boot commo library</description>
@@ -141,12 +141,12 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<!-- <excludes>
+					<excludes>
 						<exclude>${exclude.class.application}</exclude>
 						<exclude>${exclude.class.sampleController}</exclude>
 						<exclude>${exclude.class.sampleRestController}</exclude>
 						<exclude>${exclude.class.interceptorConfig}</exclude>
-					</excludes> -->
+					</excludes>
 				</configuration>
 			</plugin>
 			<!-- jarファイル生成 -->
@@ -155,12 +155,12 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
-					<!-- <excludes>
+					<excludes>
 						<exclude>${exclude.class.application}</exclude>
 						<exclude>${exclude.class.sampleController}</exclude>
 						<exclude>${exclude.class.sampleRestController}</exclude>
 						<exclude>${exclude.class.interceptorConfig}</exclude>
-					</excludes> -->
+					</excludes>
 				</configuration>
 			</plugin>
 			<!-- javadoc生成 -->
