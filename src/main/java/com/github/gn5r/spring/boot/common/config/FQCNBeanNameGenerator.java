@@ -19,7 +19,7 @@ public final class FQCNBeanNameGenerator extends AnnotationBeanNameGenerator {
 	 * @return パッケージ名付きBean名
 	 */
 	@Override
-	public String buildDefaultBeanName(BeanDefinition definition) {
+	protected String buildDefaultBeanName(BeanDefinition definition) {
 		return definition.getBeanClassName();
 	}
 }
