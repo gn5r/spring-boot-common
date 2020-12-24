@@ -69,23 +69,3 @@
 - 以下コマンドを実行して当該ライブラリをインストールする
 
   `mvn clean install`
-
-## プロパティを読み込む設定
-
-- `@SpringBootApplication` が付与されているクラスにて以下のように本パッケージを各 SpringBootApplication 全体で読み込むようにする
-  - (プロパティを読み込むクラス毎にアノテーションを付与する方法でも可。但しあっちこっちで記述しないといけなくなる可能性もあるので Application クラスで読み込むようにした方が無難)
-
-```java:SpringBootAppcication.java
-/**
- * @ComponentScanアノテーションを付与し、本パッケージを記述して読み込むようにする
- * また本パッケージのみを記述すると、各アプリケーションのBeanなどを読み込まなくなってしまうので、続けて各アプリケーションのパッケージも記述すること
- */
-@SpringBootApplication
-@ComponentScan(nameGenerator = FQCNBeanNameGenerator.class, value = {"com.github.gn5r.spring.boot.common", "各アプリケーションのパッケージ"})
-public class SpringBootApplication {
-
-  public static void main(String[] args) {
-    SpringApplication.run(SpringBootApplication.class, args);
-  }
-}
-```

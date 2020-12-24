@@ -4,7 +4,6 @@ import com.github.gn5r.spring.boot.common.annotation.NoURLConsole;
 import com.github.gn5r.spring.boot.common.interceptor.URLConsoleInterceptor;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 /**
  * URLロギングプロパティ
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Component;
  * @see URLConsoleInterceptor
  * @see NoURLConsole
  */
-@Component
 @ConfigurationProperties(prefix = "application.interceptor.url.console")
 public class URLConsoleProperty {
 
